@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   
   const audioEffect = document.querySelector("audio")
@@ -8,17 +9,17 @@ $(document).ready(function(){
   const intro2WrapEl = document.querySelector(".intro2__wrap");
   const intro2El = document.querySelector(".intro2");
   const intro3El = document.querySelector(".intro3");
-
+ 
 
   const individualLineEl = containerEl.children;
 
-    audioEffect.play();
-    audioEffect.volume = 1;
     introLayoutEl.setAttribute("style", "animation: fade-out 1s 8s forwards; display: block;");
     intro1El.setAttribute("style", "animation-name: intro-in, fade-out; animation-duration: 0.15s, 1s; animation-delay: 0s, 2.5s; animation-fill-mode: both, forwards; animation-timing-function: ease-in, ease;");
     intro2El.setAttribute("style", "animation-name: intro-in, intro-reverse; animation-duration: 0.15s, 0.15s; animation-delay: 0.15s, 2.35s; animation-fill-mode: both, forwards; animation-timing-function: linear, linear;");
     intro3El.setAttribute("style", "animation-name: intro-in, intro-reverse; animation-duration: 0.15s, 0.15s; animation-delay: 0.3s, 2.2s; animation-fill-mode: both, forwards; animation-timing-function: ease-out, ease-in;");
+    let audio = new Audio("./넷플릭스 인트로 효과음.mp3");
     
+
     function lineEffect () {
       for (let i = 0; i < 10; i += 1) {
         let cloneLine = divLine.cloneNode(false);
@@ -41,7 +42,9 @@ $(document).ready(function(){
     }
     setTimeout(layoutDisplayNone, 9500);
     
-
+    audio.play();
+    audio.volume = 1;
+  
   const skipBtnEl = document.querySelector(".btn-secondary");
   skipBtnEl.addEventListener("click", () => {
   introLayoutEl.removeAttribute("style")
